@@ -17,8 +17,9 @@ fn main() {
             None,
             None,
             None,
-        );
-        SendMessageW(hwnd, 0x0112, WPARAM(0xF170), LPARAM(2));
+        )
+        .expect("Failed to create window");
+        SendMessageW(hwnd, 0x0112, Some(WPARAM(0xF170)), Some(LPARAM(2)));
         let _ = DestroyWindow(hwnd);
     }
 }

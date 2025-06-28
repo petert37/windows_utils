@@ -6,13 +6,18 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+dark-light = "2.0.0"
+image = "0.25.6"
+tray-icon = "0.21.0"
+winit = "0.30.11"
 
 [dependencies.windows]
-version = "0.51.0"
+version = "0.61.3"
 features = [
     "Win32_Foundation",
     "Win32_UI_WindowsAndMessaging",
-    "Win32_UI_Input_KeyboardAndMouse"
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_System_Power",
 ]
 
 [[bin]]
@@ -22,3 +27,7 @@ path = "src/screen_off/main.rs"
 [[bin]]
 name = "play_pause"
 path = "src/play_pause/main.rs"
+
+[[bin]]
+name = "power_mode_monitor"
+path = "src/power_mode_monitor/main.rs"
